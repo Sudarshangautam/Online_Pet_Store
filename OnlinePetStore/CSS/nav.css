@@ -1,0 +1,42 @@
+.btn-success{
+    color: #ffffff;
+border-color: #ffffff;
+background-color:#000000;
+padding:5px;
+  }
+  .btn-success:hover, .btn-secondary:hover, .btn-outline-success:hover{
+    background-color: #5c5a57;
+    border-color: #ffffff;
+  }
+  .bg-dark{
+    background-color:#000000!important;
+  
+  } 
+
+  .btn-secondary {
+    color: #ffffff;
+border-color: #ffffff;
+background-color:#000000;
+padding:5px;
+}
+.nav-item{
+font-size:17px;
+}
+.btn-outline-success {
+color: #ffffff;
+border-color: #ffffff;
+background-color:#000000;
+padding:5px;
+}
+.form-control{
+border-radius:10px;
+font-weight: 50;
+} 
+img{
+    margin: -10px;
+}
+.alert-warning {
+  color: #100101;
+  background-color: #f60b3b;
+  border-color: #f9f1f1;
+}
