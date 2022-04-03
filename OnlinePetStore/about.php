@@ -16,14 +16,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="CSS/aboutus.css" rel="stylesheet">
+    <link href="CSS/about.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/nav.css">
     <link rel="stylesheet" type="text/css" href="CSS/footer.css">
 
@@ -34,103 +30,39 @@
   
   <main id="main">
 
-   
+  <div class="section">
+		<div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>About Us</h1>
+				</div>
+        <br>
+				<div class="content">
+					
+					<p>A pet shop or pet store is a retail business which sells animals and pet care resources to the public. A variety of animal supplies and pet accessories are also sold in pet shops. The products sold include: food, treats, toys, collars, leashes, cat litter, cages and aquariums.
+          Pet stores make it simple to run down to the corner and grab a bag of litter or the latest dog toy. The products and services offered can vary widely, from big-box chains selling live pets to a natural foods specialist focusing on simple diets for dogs and cats. Quality can also vary widely depending on a store's policies, suppliers and management.
+
+
+          </p>
+				
+				</div>
+			
+			</div>
+			<div class="image-section">
+				<img src="Images/img2.jpg">
+			</div>
+		</div>
+	</div>
   <section>
-        <div class="row justify-content-center" style="padding-top: 20px;">
-            <div class="col-lg-8 text-center">
-                <h2 class="mt-0">About Us</h2>
-                <hr class="divider my-4">
-
-       
- <p>We are a trekking agency based in Kathmandu and we let our clients experience the local culture of different places of Nepal.
-          We make sure that our clients are comfortable in all possible manners, we takes care of everything during our leadership and always ready to help on anything that’s possible out there.We prioritize to offer the detailed and authentic information about the region providing reliable service to promote different places as a special adventure and exploration destination in Nepal. 
- &nbsp; &nbsp; &nbsp;
-
-
- <div class="row">
-  <div class="column">
-    <img src="Images/img1.jpg" alt="dog"  style="width:100% ; height:250px" class="rounded-circle">
-  </div>
-  <div class="column">
-    <img src="Images/img2.jpg"  class="rounded-circle" alt="cat"  style="width:100% ; height:250px">
-  </div>
-  <div class="column">
-    <img src="Images/img3.jpg" alt="rabbit"  class="rounded-circle" style="width:100% ; height:250px">
-  </div>
-</div>
-
- 
-</div>
-</div>
-
-<blockquote class="wp-block-quote"><p>The world is a book and those who do not travel read only one page.  </p><cite>Agustine of Hippo</cite></blockquote>
-<blockquote class="wp-block-quote"><p>All journeys have secret destinations of which the traveler is unaware.  </p><cite>Martin Buber</cite></blockquote>
-<blockquote class="wp-block-quote"><p>Travelling — it leaves you speechless, then turns you into a storyteller. </p><cite>Ibn Battuta</cite></blockquote>
+        
+<blockquote class="wp-block-quote"><p> “There’s a saying. If you want someone to love you forever, buy a dog, feed it and keep it around.”  </p><cite>Dick Dale, American Musician</cite></blockquote>
+<blockquote class="wp-block-quote"><p>“An animal’s eyes have the power to speak a great language.” </p><cite>Martin Buber, German Philosopher</cite></blockquote>
+<blockquote class="wp-block-quote"><p>“Dogs are our link to paradise. They don’t know evil or jealousy or discontent.” </p><cite> Milan Kundera, Czech Writer</cite></blockquote>
 
 
     </section>
 
-    <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Team</h2>
-        </div>
-
-        <div class="row" style="padding-left: 228px;">
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="member">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Darshan Parmar</h4>
-                </div>
-                <div class="social">
-                  <a href="https://twitter.com/darshankparmar" target="_blank"><i class="icofont-twitter"></i></a>
-                  <a href="https://github.com/darshankparmar" target="_blank"><i class="fab fa-github"></i></a>
-                  <a href="https://www.linkedin.com/in/darshankparmar/" target="_blank"><i class="icofont-linkedin" target="_blank"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="member">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Harsh Patel</h4>
-                </div>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter" target="_blank"></i></a>
-                  <a href="https://github.com/7Har" target="_blank"><i class="fab fa-github"></i></a>
-                  <a href=""><i class="icofont-linkedin" target="_blank"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="member">
-              <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="" style="height: 198px;width: 198px;">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Bhavesh Parmar</h4>
-                </div>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter" target="_blank"></i></a>
-                  <a href="https://github.com/Blparmar007" target="_blank"><i class="fab fa-github"></i></a>
-                  <a href=""><i class="icofont-linkedin" target="_blank"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- End Our Team Section -->
+    
   </main>
 
   <?php include 'partials/_footer.php';?> 

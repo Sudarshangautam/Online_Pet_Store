@@ -1,19 +1,19 @@
 <div class="container" style="margin-top:98px;background: #ffffff;">
     <div class="table-wrapper">
-        <div class="table-title" style="border-radius: 14px; background: #000000;">
-            <div class="row">
-                <div class="col-sm-4" >
+        <div class="table-title" style="text-align:center; background-color:black; color:white;">
+            <!-- <div class="row">
+                <div class="col-sm-4" > -->
                     <h2>Order <b>Details</b></h2>
-                </div>
-                <div class="col-sm-8">						
+                <!-- </div> -->
+                <!-- <div class="col-sm-8">						
                     <a href="" class="btn btn-primary"><i class="material-icons">&#xE863;</i> <span>Refresh List</span></a>
                     <a href="#" onclick="window.print()" class="btn btn-info"><i class="material-icons">&#xE24D;</i> <span>Print</span></a>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
         </div>
         
         <table class="table table-striped table-hover text-center" id="NoOrder">
-            <thead style="background-color: rgb(111 202 203);">
+            <thead>
                 <tr>
                     <th>Order Id</th>
                     <th>User Id</th>
@@ -35,7 +35,7 @@
                         $Id = $row['userId'];
                         $orderId = $row['orderId'];
                         $address = $row['address'];
-                        $zipCode = $row['zipCode'];
+                       
                         $phoneNo = $row['phoneNo'];
                         $amount = $row['amount'];
                         $orderDate = $row['orderDate'];
@@ -58,7 +58,7 @@
                                 <td>' . $amount . '</td>
                                 <td>' . $paymentMode . '</td>
                                 <td>' . $orderDate . '</td>
-                                <td><a href="#" data-toggle="modal" data-target="#orderStatus' . $orderId . '" class="view"><i class="material-icons">&#xE5C8;</i></a></td>
+                                <td><button style="background-color:green;color:#ffffff;">Confirmed</button></td>
                                 <td><a href="#" data-toggle="modal" data-target="#orderItem' . $orderId . '" class="view" title="View Details"><i class="material-icons">&#xE5C8;</i></a></td>
                             </tr>';
                     }
@@ -73,7 +73,7 @@
 
 <?php 
     include 'partials/_orderItemModal.php';
-    include 'partials/_orderStatusModal.php';
+   
 ?>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

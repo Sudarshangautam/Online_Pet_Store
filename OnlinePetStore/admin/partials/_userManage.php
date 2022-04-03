@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $Id = $_POST["Id"];
         $sql = "DELETE FROM `users` WHERE `id`='$Id'";   
         $result = mysqli_query($conn, $sql);
-        echo "<script>alert('Removed');
+        echo "<script>alert('Removed User');
             window.location=document.referrer;
             </script>";
     }
@@ -75,46 +75,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     
-    if(isset($_POST['updateProfilePhoto'])) {
-        $id = $_POST["userId"];
-        $check = getimagesize($_FILES["userimage"]["tmp_name"]);
-        if($check !== false) {
-            $newfilename = "person-".$id.".jpg";
-
-            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/OnlinePetStore/img/';
-            $uploadfile = $uploaddir . $newfilename;
-
-            if (move_uploaded_file($_FILES['userimage']['tmp_name'], $uploadfile)) {
-                echo "<script>alert('success');
-                        window.location=document.referrer;
-                    </script>";
-            } else {
-                echo "<script>alert('failed');
-                        window.location=document.referrer;
-                    </script>";
-            }
-        }
-        else{
-            echo '<script>alert("Please select an image file to upload.");
-            window.location=document.referrer;
-                </script>';
-        }
-    }
+   
     
-    if(isset($_POST['removeProfilePhoto'])) {
-        $id = $_POST["userId"];
-        $filename = $_SERVER['DOCUMENT_ROOT']."/OnlinePetStore/img/person-".$id.".jpg";
-        if (file_exists($filename)) {
-            unlink($filename);
-            echo "<script>alert('Removed');
-                window.location=document.referrer;
-            </script>";
-        }
-        else {
-            echo "<script>alert('no photo available.');
-                window.location=document.referrer;
-            </script>";
-        }
-    }
+   
 }
 ?>

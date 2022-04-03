@@ -85,9 +85,9 @@
                                     if($quaExistRows == 0) {
                                         echo '<form action="partials/_manageCart.php" method="POST">
                                               <input type="hidden" name="itemId" value="'.$productId. '">
-                                              <button type="submit" name="addToCart" class="btn btn-primary mx-2" >Add to Cart</button>';
+                                              <button type="submit" name="addToCart" class="btn btn-primary mx-2" style="background-color:#000000; color:#ffffff; border-color:#ffffff;" >Add to Cart</button>';
                                     }else {
-                                        echo '<a href="viewCart.php"><button class="btn btn-primary mx-2">Go to Cart</button></a>';
+                                        echo '<a href="viewCart.php"><button class="btn btn-primary mx-2" style="background-color:#000000; color:#ffffff; border-color:#ffffff;">Go to Cart</button></a>';
                                     }
                                 }
                                 else{
@@ -103,12 +103,7 @@
             if($noResult) {
                 echo '<div class="jumbotron jumbotron-fluid">
                     <div class="container">
-                        <h1>Your search - <em>"' .$_GET['search']. '"</em> - No Result Found.</h1>
-                        <p class="lead"> Suggestions: <ul>
-                            <li>Make sure that all words are spelled correctly.</li>
-                            <li>Try different keywords.</li>
-                            <li>Try more general keywords.</li></ul>
-                        </p>
+                        <h1>You have searchd - <em>"' .$_GET['search']. '"</em> - Result Not Found.</h1>
                     </div>
                 </div> ';
             }

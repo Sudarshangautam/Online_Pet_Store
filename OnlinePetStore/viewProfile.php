@@ -152,35 +152,10 @@
             }
 
         ?>
-        <div class="row">
-            <div class="jumbotron p-3 mb-3" style="display: flex;justify-content: center;width: 28%;border-radius: 50px;margin: 0 auto; background-color:#ffffff">
-                <div class="user-info">
-                    <img class="rounded-circle mb-3 bg-dark" src="img/person-<?php echo $userId; ?>.jpg" onError="this.src = 'img/profilePic.jpg'" style="width:215px;height:215px;padding:1px; margin-left:10px;">
-                    <form action="partials/_manageProfile.php" method="POST">
-                        <small style="margin-left:10px;">Remove Image: </small><button type="submit" class="btn btn-danger" name="removeProfilePic" style="font-size: 12px;padding: 3px 8px;border-radius: 9px;background-color:red;">remove</button>
-                    </form>
-                    <form action="partials/_manageProfile.php" method="POST" enctype="multipart/form-data" style="margin-top: 7px;">
-                        <div class="upload-btn-wrapper">
-                            <small style="margin-left:10px;">Change Image:</small>
-                            <button class="btn upload">choose</button>
-                            <input type="file" name="image" id="image" accept="image/*">
-                        </div>
-                        <button type="submit" name="updateProfilePic" class="btn btn-primary" style="margin-top: -20px;font-size: 15px;padding: 3px 8px; background-color:green;">Update</button>
-                    </form>
-                    
-                    <ul class="meta list list-unstyled" style="text-align:center;">
-                        <li class="username my-2"><a href="viewProfile.php">@<?php echo $username ?></a></li>
-                        <li class="name"><?php echo $firstName." ".$lastName; ?>
-                            <label class="label label-info">(<?php echo $userType ?>)</label>
-                        </li>
-                        <li class="email"><?php echo $email ?></li>
-                        <li class="my-2"><a href="partials/_logout.php"><button class="btn btn-secondary" style="font-size: 15px;padding: 3px 8px;">Logout</button></a></li>
-                    </ul>
-                </div>
-            </div>
+  
             <div class="content-panel mb-3" style="display: flex;justify-content: center;">
                 <div class="border p-3" style="border: 2px solid rgba(0, 0, 0, 0.1);border-radius: 1.1rem;background-color: #ffffff;">
-                    <h2 class="title text-center">Profile<span class="pro-label label label-warning"> (<?php echo $userType ?>)</span></h2>
+                    <h2 class="title text-center">Your Profile</h2>
                 
                     <form action="partials/_manageProfile.php" method="post">
                         <div class="form-group">
@@ -201,8 +176,8 @@
                             <b><label for="email">Email:</label></b>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required value="<?php echo $email ?>">
                         </div>
-                        <div class="form-row">
-                            <div class="form-group  col-md-6">
+                        
+                            <div class="form-group ">
                                 <b><label for="phone">Phone No:</label></b>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -211,16 +186,19 @@
                                     <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required pattern="[0-9]{10}" maxlength="10" value="<?php echo $phone ?>">
                                 </div>
                             </div>
-                            <div class="form-group  col-md-6">
+                           
+                        
+                        <div class="form-group">
                                 <b><label for="password">Password:</label></b>    
-                                <input class="form-control" id="password" name="password" placeholder="Enter Password" type="password" required minlength="4" maxlength="21" data-toggle="password">
+                                <input class="form-control" id="password" name="password" placeholder="Enter Password" type="password" required minlength="8" maxlength="21" data-toggle="password">
                             </div>
-                        </div>
                         <button type="submit" name="updateProfileDetail" class="btn btn-primary"style="background-color: green; color:#ffffff;">Update</button>
                     </form>
+                    <br>
+                    <a href="index.php"><button class="btn btn-secondary" style="font-size: 15px;padding: 3px 8px;"><- Go Back</button></a>
                 </div>
             </div>
-        </div>
+        
     </div>
 
     <?php

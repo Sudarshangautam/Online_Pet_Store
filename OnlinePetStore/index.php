@@ -17,86 +17,33 @@
     <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/footer.css">
     <link rel="stylesheet" type="text/css" href="CSS/nav.css">
+    <link rel="stylesheet" type="text/css" href="CSS/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-      #hero .btn-get-started {
-        background-color:#000000;
-        border-color:#ffffff;
-      }
-      #hero .btn-get-started:hover {
-        background-color:#D3D3D3;
-        color:#000000;
-        border-color:#000000;
-      
-      }
-     
-     
-      </style>
-  </head>
+      </head>
 <body>
   <?php include 'partials/_dbconnect.php';?>
   <?php require 'partials/_nav.php' ?>
 
-
-
-   <!-- ======= Hero Section ======= -->
-   <section id="hero">
-    <div class="hero-container">
-      <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide 1 -->
-          <div class="carousel-item active">
-            <div class="carousel-background"><img src="assets/img/slide/slide-1.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Pet World</span></h2>
-                <a href="index.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="assets/img/slide/slide-2.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown mb-0" style="color:#D3D3D3;">Our Mission</h2>
-                <p class="animate__animated animate__fadeInUp">To suppy high quality breeds with guaranted products for your loved pets.</p>
+  <div class="Container">
+        <div class="desc">
                 
-              </div>
-            </div>
+          <div class="desc1">
+            <p><br> Best <br> Pet </br>shop !!! </p>
           </div>
-          <!-- Slide 3 -->
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="assets/img/slide/slide-3.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown mb-0" style="color:#D3D3D3;">Our Goal</h2>
-                <p class="animate__animated animate__fadeInUp">To satisfy the customers</p>
-              </div>
+            <div class="desc2">
+              <p>"Love your pets a little extra."</p>
             </div>
+
           </div>
-        </div>
+    </div> 
 
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon icofont-thin-double-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon icofont-thin-double-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-
-      </div>
-    </div>
-  </section><!-- End Hero -->
+  
   
   <!-- Category container starts here -->
   <div class="container my-3 mb-5">
-    <div class="col-lg-2 text-center bg-light my-3" style="margin:auto;border-top: 2px groove black;border-bottom: 2px groove black; ">     
-      <h2 class="text-center" >Our Products</h2>
+    <div class="col-lg-2 text-center bg-light my-3" style="margin:auto;border-top: 2px groove black;border-bottom: 2px groove black;">     
+      <h2 class="text-center" style="  background-color:#000000; color:#ffffff; margin-top:10px;" >Our Products</h2>
     </div>
     <div class="row">
       <!-- Fetch all the categories and use a loop to iterate through categories -->
@@ -111,9 +58,9 @@
                   <div class="card" style="width: 18rem;">
                     <img src="image'.$id. '.jpg" class="card-img-top" alt="image for this category" width="249px" height="270px" style="margin-left:0px; margin-top:0px;">
                     <div class="card-body" style="background-color:grey;">
-                      <h5 class="card-title" ><a href="viewPizzaList.php?catid=' . $id . '" style="color:#000000;">' . $cat . '</a></h5>
+                      <h5 class="card-title" ><a href="viewProductList.php?catid=' . $id . '" style="color:#000000;">' . $cat . '</a></h5>
                       <p class="card-text" style="color:#ffffff;">' . substr($desc, 0, 30). '... </p>
-                      <a href="viewProductList.php?catid=' . $id . '" class="btn btn-primary" style="background-color:#000000; color:#ffffff; border-color:#ffffff;">View All</a>
+                      <a href="viewProductList.php?catid=' . $id . '" class="btn btn-primary" style="background-color:#000000; color:#ffffff; border-color:#ffffff;">See All Product</a>
                     </div>
                   </div>
                 </div>';

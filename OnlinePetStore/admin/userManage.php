@@ -1,11 +1,7 @@
 
 <div class="container-fluid" style="margin-top:98px">
 	
-	<div class="row">
-        <div class="col-lg-12">
-            <button class="btn btn-primary float-right btn-sm" style="background-color: #000000;color:#ffffff; border-color:#ffffff;" data-toggle="modal" data-target="#newUser"><i class="fa fa-plus"></i> New user</button>
-        </div>
-	</div>
+
 	    <br>
 	<div class="row">
 		<div class="card col-lg-12">
@@ -54,7 +50,10 @@
                                     <td>' .$userType. '</td>
                                     <td class="text-center">
                                         <div class="row mx-auto" style="width:112px">
-                                            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editUser' .$Id. '" type="button">Edit</button>';
+                                        <i class="fas fa-edit" data-toggle="modal" data-target="#editUser' .$Id. '" type="button"></i>
+                                       
+                                            ';
+                                            
                                             if($Id == 1) {
                                                 echo '<button class="btn btn-sm btn-danger" disabled style="margin-left:9px;">Delete</button>';
                                             }
@@ -75,6 +74,12 @@
 			</div>
 		</div>
 	</div>
+<br>
+    <div class="row">
+        <div class="col-lg-12">
+            <button class="btn btn-primary float-right btn-sm" style="background-color: #000000;color:#ffffff; border-color:#ffffff;" data-toggle="modal" data-target="#newUser"><i class="fa fa-plus"></i> Create New user</button>
+        </div>
+	</div>
 </div>
 
 <!-- newUser Modal -->
@@ -82,7 +87,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color: #000000;color:#ffffff; border-color:#ffffff;">
-        <h5 class="modal-title" id="newUser">Create New User</h5>
+        <h5 class="modal-title" id="newUser" style="margin-left:35%;">Create New User</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#ffffff;">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -91,7 +96,7 @@
         <form action="partials/_userManage.php" method="post">
               <div class="form-group">
                   <b><label for="username">Username</label></b>
-                  <input class="form-control" id="username" name="username" placeholder="Choose a unique Username" type="text" required minlength="3" maxlength="11">
+                  <input class="form-control" id="username" name="username" placeholder="Username" type="text" required minlength="3" maxlength="11">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
@@ -127,11 +132,11 @@
               </div>
               <div class="form-group">
                   <b><label for="password">Password:</label></b>
-                  <input class="form-control" id="password" name="password" placeholder="Enter Password" type="password" required data-toggle="password" minlength="4" maxlength="21">
+                  <input class="form-control" id="password" name="password" placeholder="Enter Password" type="password" required data-toggle="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Your password must contain at least one number, one uppercase letter, and one special character, and should be more than 8 characters.">
               </div>
               <div class="form-group">
                   <b><label for="password1">Renter Password:</label></b>
-                  <input class="form-control" id="cpassword" name="cpassword" placeholder="Renter Password" type="password" required data-toggle="password" minlength="4" maxlength="21">
+                  <input class="form-control" id="cpassword" name="cpassword" placeholder="Renter Password" type="password" required data-toggle="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Your password must contain at least one number, one uppercase letter, and one special character, and should be more than 8 characters.">
               </div>
               <button type="submit" name="createUser" class="btn btn-success">Submit</button>
             </form>
@@ -166,24 +171,7 @@
       </div>
         <div class="modal-body">
             
-            <div class="text-left my-2 row" style="border-bottom: 2px solid #dee2e6;">
-                <div class="form-group col-md-8">
-                    <form action="partials/_userManage.php" method="post" enctype="multipart/form-data">
-                        <b><label for="image">Profile Picture</label></b>
-                        <input type="file" name="userimage" id="userimage" accept=".jpg" class="form-control" required style="border:none;">
-                        <small id="Info" class="form-text text-muted mx-3">Please .jpg file upload.</small>
-                        <input type="hidden" id="userId" name="userId" value="<?php echo $Id; ?>">
-                        <button type="submit" class="btn btn-success mt-3" name="updateProfilePhoto">Update Img</button>
-                    </form>         
-                </div>
-                <div class="form-group col-md-4">
-                    <img src="/OnlinePetStore/img/person-<?php echo $Id; ?>.jpg" alt="Profile Photo" width="100" height="100" onError="this.src ='/OnlinePetStore/img/profilePic.jpg'">
-                    <form action="partials/_userManage.php" method="post">
-                        <input type="hidden" id="userId" name="userId" value="<?php echo $Id; ?>">
-                        <button type="submit" class="btn btn-success mt-2" name="removeProfilePhoto"style="background-color:red;">Remove Img</button>
-                    </form>
-                </div>
-            </div>
+          
             
             <form action="partials/_userManage.php" method="post">
                 <div class="form-group">

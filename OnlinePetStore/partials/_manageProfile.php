@@ -3,31 +3,7 @@
     session_start();
     $userId = $_SESSION['userId'];
     
-    
-    if(isset($_POST["updateProfilePic"])){
-        $check = getimagesize($_FILES["image"]["tmp_name"]);
-        if($check !== false) {
-            $newfilename = "person-".$userId.".jpg";
-
-            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/OnlinePetStore/img/';
-            $uploadfile = $uploaddir . $newfilename;
-
-            if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-                echo "<script>alert('success');
-                        window.location=document.referrer;
-                    </script>";
-            } else {
-                echo "<script>alert('image upload failed, please try again.');
-                        window.location=document.referrer;
-                    </script>";
-            }
-        }
-        else{
-            echo '<script>alert("Please select an image file to upload.");
-                window.history.back(1);
-            </script>';
-        }
-    }
+   
 
     if(isset($_POST["updateProfileDetail"])){
         $firstName = $_POST["firstName"];
@@ -59,19 +35,5 @@
         }
     }
     
-    if(isset($_POST["removeProfilePic"])){
-        $filename = $_SERVER['DOCUMENT_ROOT']."/OnlinePetStore/img/person-".$userId.".jpg";
-        if (file_exists($filename)) {
-            unlink($filename);
-            echo "<script>alert('Removed');
-                window.location=document.referrer;
-            </script>";
-        }
-        else {
-            echo "<script>alert('no photo available.');
-                window.location=document.referrer;
-            </script>";
-        }
-    }
-    
+     
 ?>

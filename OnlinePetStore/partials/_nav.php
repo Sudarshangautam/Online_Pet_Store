@@ -30,24 +30,29 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Top Categories
+             Categories
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >';
             $sql = "SELECT categorieName, categorieId FROM `categories`"; 
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)){
-              echo '<a class="dropdown-item" href="viewProductList.php?catid=' .$row['categorieId']. '">' .$row['categorieName']. '</a>';
+              echo '<a class="dropdown-item"  href="viewProductList.php?catid=' .$row['categorieId']. '">' .$row['categorieName']. '</a>';
             }
             echo '</div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="viewOrder.php">Your Orders</a>
+            <a class="nav-link" href="viewOrder.php">Orders</a>
           </li>
        
         </ul>
         <form method="get" action="/OnlinePetStore/search.php" class="form-inline my-2 my-lg-0 mx-3">
-          <input class="form-control mr-sm-2" type="search" name="search" id="search" placeholder="Search" aria-label="Search" required>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" type="search" name="search" id="search" placeholder="Search here..." aria-label="Search"  style="width:79%;" required>
+          <button type="submit" class="btn btn-secondary mx-2" title="Search">
+          <svg xmlns="img/search.svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+        <i class="bi bi-search"></i>
+        </button>
         </form>';
 
         $countsql = "SELECT SUM(`itemQuantity`) FROM `viewcart` WHERE `userId`=$userId"; 
@@ -61,7 +66,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <svg xmlns="img/cart.svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
           </svg>  
-          <i class="bi bi-cart">Cart(' .$count. ')</i>
+          <i class="bi bi-cart">' .$count. '</i>
         </button></a>';
 
         if($loggedin){
@@ -79,8 +84,8 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         }
         else {
           echo '
-          <button type="button" class="btn btn-success mx-2"  data-toggle="modal" data-target="#loginModal">Login</button>
-          <button type="button" class="btn btn-success mx-2"  data-toggle="modal" data-target="#signupModal">SignUp</button>';
+          <button type="button" class="btn btn-success mx-2"  data-toggle="modal" data-target="#loginModal">Login</button>';
+          
         }
             
   echo '</div>

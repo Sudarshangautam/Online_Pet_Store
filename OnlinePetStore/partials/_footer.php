@@ -49,10 +49,10 @@
   	 		<div class="footer-col" style="margin-left:15%;">
   	 			<h4>Find Us on</h4>
   	 			<div class="social-links">
-  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://www.facebook.com/sudarshan.gautam.7545"><i class="fab fa-facebook-f"></i></a>
   	 				
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 				<a href="https://www.instagram.com/sudarshan2586/"><i class="fab fa-instagram"></i></a>
+  	 				<a href="https://www.linkedin.com/in/sudarshan-gautam-142729218/"><i class="fab fa-linkedin-in"></i></a>
   	 			</div>
   	 		</div>
   	 	</div>

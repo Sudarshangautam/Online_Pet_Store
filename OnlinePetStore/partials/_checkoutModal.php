@@ -9,17 +9,29 @@
             </button>
         </div>
         <div class="modal-body">
+            <h4>Online Payment: </h4>
+        <form action="https://uat.esewa.com.np/epay/main" method="POST">
+										<input value="<?php echo $totalPrice; ?>" name="tAmt" type="hidden">
+										<input value="<?php echo $totalPrice; ?>" name="amt" type="hidden">
+										<input value="0" name="txAmt" type="hidden">
+										<input value="0" name="psc" type="hidden">
+										<input value="0" name="pdc" type="hidden">
+										<input value="epay_payment" name="scd" type="hidden">
+                                        <input value="<?php echo $productId; ?>" name="pid" type="hidden">
+                                        <input value="http://localhost/OnlinePetStore/partials/esewa_payment_success.php" type="hidden" name="su">
+										<input value="http://localhost/OnlinePetStore/partials/esewa_payment_failed.php" type="hidden" name="fu">
+										<input type="image" name="esewa-button" src="Images/esewa.png">
+				</form>
+                <br>
             <form action="partials/_manageCart.php" method="post">
+                <h4>Cash on Delivery:</h4>
                 <div class="form-group">
                     <b><label for="address">Address:</label></b>
-                    <input class="form-control" id="address" name="address" placeholder="Street Name" type="text" required minlength="3" maxlength="500">
+                    <input class="form-control" id="address" name="address" placeholder="Your Exact Location" type="text" required minlength="3" maxlength="500">
                 </div>
-                <div class="form-group">
-                    <b><label for="address1">Address Line 2:</label></b>
-                    <input class="form-control" id="address1" name="address1" placeholder="Exact delivery location" type="text" RequireR>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6 mb-0">
+                
+                
+                    <div class="form-group ">
                         <b><label for="phone">Phone No:</label></b>
                         <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -28,11 +40,7 @@
                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="xxxxxxxxxx" required pattern="[0-9]{10}" maxlength="10">
                         </div>
                     </div>
-                    <div class="form-group col-md-6 mb-0">
-                        <b><label for="zipcode">Zip Code:</label></b>
-                        <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="xxxxxx" required pattern="[0-9]{5}" maxlength="5">                    
-                    </div>
-                </div>
+                  
                 <div class="form-group">
                     <b><label for="password">Password:</label></b>    
                     <input class="form-control" id="password" name="password" placeholder="Enter Password" type="password" required minlength="4" maxlength="21" data-toggle="password">
@@ -42,8 +50,11 @@
                     <input type="hidden" name="amount" value="<?php echo $totalPrice ?>">
                     <button type="submit" name="checkout" class="btn btn-success">Confirm</button>
                 </div>
+              
             </form>
+          
         </div>
+      
         </div>
     </div>
 </div>

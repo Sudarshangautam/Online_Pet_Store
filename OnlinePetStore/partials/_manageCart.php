@@ -16,8 +16,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </script>";
         }
         else{
-            $sql = "INSERT INTO `viewcart` (`productId`, `itemQuantity`, `userId`, `addedDate`) VALUES ('$itemId', '1', '$userId', current_timestamp())";   
+            $sql = "INSERT INTO `viewcart` (`productId`, `itemQuantity`, `userId`, `addedDate`) VALUES ('$itemId', '1', '$userId', current_timestamp())"; 
+              $sql1="INSERT INTO `payment` (`productId`, `itemQuantity`,`userId`, `status`,`orderDate`) VALUES ('$itemId', '1', '$userId', '0', current_timestamp())";
             $result = mysqli_query($conn, $sql);
+            $result1=mysqli_query($conn, $sql1);
             if ($result){
                 echo "<script>alert('Product successfully added to the cart');
                     window.history.back(1);
@@ -43,19 +45,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if(isset($_POST['checkout'])) {
         $amount = $_POST["amount"];
-        $address1 = $_POST["address"];
-        $address2 = $_POST["address1"];
+        $address= $_POST["address"];
+       
         $phone = $_POST["phone"];
-        $zipcode = $_POST["zipcode"];
+       
         $password = $_POST["password"];
-        $address = $address1.", ".$address2;
+       
         
         $passSql = "SELECT * FROM users WHERE id='$userId'"; 
         $passResult = mysqli_query($conn, $passSql);
         $passRow=mysqli_fetch_assoc($passResult);
         $userName = $passRow['username'];
         if (password_verify($password, $passRow['password'])){ 
-            $sql = "INSERT INTO `orders` (`userId`, `address`, `zipCode`, `phoneNo`, `amount`, `paymentMode`, `orderStatus`, `orderDate`) VALUES ('$userId', '$address', '$zipcode', '$phone', '$amount', '0', '0', current_timestamp())";
+            $sql = "INSERT INTO `orders` (`userId`, `address`, `phoneNo`, `amount`, `paymentMode`, `orderStatus`, `orderDate`) VALUES ('$userId', '$address', '$phone', '$amount', '0', '0', current_timestamp())";
             $result = mysqli_query($conn, $sql);
             $orderId = $conn->insert_id;
             if ($result){
@@ -69,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 $deletesql = "DELETE FROM `viewcart` WHERE `userId`='$userId'";   
                 $deleteresult = mysqli_query($conn, $deletesql);
-                echo '<script>alert("Thanks for ordering with us. Your order id is ' .$orderId. '.");
+                echo '<script>alert("Thanks for ordering with us. ");
                     window.location.href="http://localhost/OnlinePetStore/index.php";  
                     </script>';
                     exit();
@@ -82,12 +84,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     exit();
         }    
     }
+
+
+
+   
+
+
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
     {
         $productId = $_POST['productId'];
         $qty = $_POST['quantity'];
         $updatesql = "UPDATE `viewcart` SET `itemQuantity`='$qty' WHERE `productId`='$productId' AND `userId`='$userId'";
+        $updatesql1 = "UPDATE `payment` SET `itemQuantity`='$qty' WHERE `productId`='$productId' AND `userId`='$userId'";
         $updateresult = mysqli_query($conn, $updatesql);
+        $updateresult1 = mysqli_query($conn, $updatesql1);
     }
     
 }

@@ -4,10 +4,10 @@ session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $userId = $_SESSION['userId'];
-    
+    $username = $_POST["username"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
-    $orderId = $_POST["orderId"];
+  
     $message = $_POST["message"];
     $password = $_POST["password"];
 
@@ -17,10 +17,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $passRow=mysqli_fetch_assoc($passResult);
     
     if (password_verify($password, $passRow['password'])){
-        $sql = "INSERT INTO `contact` (`userId`, `email`, `phoneNo`, `orderId`, `message`, `time`) VALUES ('$userId', '$email', '$phone', '$orderId', '$message', current_timestamp())";
+        $sql = "INSERT INTO `contact` (`userId`, `username`, `phoneNo`,`email`, `message`, `time`) VALUES ('$userId', '$username', '$phone', '$email', '$message', current_timestamp())";
         $result = mysqli_query($conn, $sql);
         $contactId = $conn->insert_id;
-        echo '<script>alert("Thanks for Contact us. Your contact id is ' .$contactId. '. We will contact you very soon.");
+        echo '<script>alert("Thanks for Contacting us. We will contact you very soon.");
                     window.location.href="http://localhost/OnlinePetStore/index.php";  
                     </script>';
                     exit();

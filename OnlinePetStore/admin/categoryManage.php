@@ -15,7 +15,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Category Desc: </label>
-                                <input type="text" class="form-control" name="desc" required>
+                                <input type="text" class="form-control" name="desc" minlength="10" maxlength="100" required>
                             </div> 
                             <div class="form-group">
 								<label for="image" class="control-label">Image</label>

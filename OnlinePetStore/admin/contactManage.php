@@ -1,7 +1,4 @@
-<div class="alert alert-info alert-dismissible fade show" role="alert" style="width:100%" id='notempty'>
-    <strong>Info!</strong> If problem is not related to the order then order id = 0	
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
-</div>
+
 <style>
     .btn-danger-gradiant {
         background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
@@ -15,21 +12,19 @@
       color:#ffffff;
     } */
 </style>
-<div style="margin-right: 32px;display: table;margin-left: auto;">
-<button type="button" style="color:#ffffff;background-color:#000000; border-color:#ffffff;"  data-toggle="modal" data-target="#history" ><span > HISTORY <i class="ti-arrow-right"></i></span></button>
-</div>
+<br>
 <div class="container-fluid" id='empty'>	
 	<div class="row">
 		<div class="card col-lg-12">
 			<div class="card-body">
 				<table class="table-striped table-bordered col-md-12 text-center">
-                    <thead style="background-color: rgb(111 202 203);">
+                    <thead style="background-color: #000000;color:#ffffff;">
                         <tr>
                             <th>Id</th>
                             <th>UserId</th>
                             <th>Email</th>
                             <th>Phone No</th>
-                            <th>Order Id</th>
+                           
                             <th>Message</th>
                             <th>datetime</th>
                             <th>Reply</th>
@@ -45,7 +40,7 @@
                                 $userId = $row['userId'];
                                 $email = $row['email'];
                                 $phoneNo = $row['phoneNo'];
-                                $orderId = $row['orderId'];
+                               
                                 $message = $row['message'];
                                 $time = $row['time'];
                                 $count++;
@@ -55,11 +50,11 @@
                                         <td>' .$userId. '</td>
                                         <td>' .$email. '</td>
                                         <td>' .$phoneNo. '</td>
-                                        <td>' .$orderId. '</td>
+                                     
                                         <td>' .$message. '</td>
                                         <td>' .$time. '</td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#reply' .$contactId. '">Reply</button>
+                                            <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" style="background-color: #000000;color:#ffffff; border-color:#ffffff;" data-target="#reply' .$contactId. '">Reply</button>
                                         </td>
                                     </tr>';
                             }
@@ -77,6 +72,11 @@
 	</div>
 </div>
 
+<br>
+<div style="margin-right: 32px;display: table;margin-left: auto;">
+<button type="button" style="color:#ffffff;background-color:#000000; border-color:#ffffff;"  data-toggle="modal" data-target="#history" ><span > View Replied Message <i class="ti-arrow-right"></i></span></button>
+</div>
+
     <?php 
         $contactsql = "SELECT * FROM `contact`";
         $contactResult = mysqli_query($conn, $contactsql);
@@ -89,9 +89,9 @@
     <div class="modal fade" id="reply<?php echo $contactId; ?>" tabindex="-1" role="dialog" aria-labelledby="reply<?php echo $contactId; ?>" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header" style="background-color: rgb(111 202 203);">
-            <h5 class="modal-title" id="reply<?php echo $contactId; ?>">Reply (Contact Id: <?php echo $contactId; ?>)</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div class="modal-header" style="background-color: #000000;color:#ffffff;">
+            <h5 class="modal-title" id="reply<?php echo $contactId; ?>" style="margin-left:30%;">Reply for the Id: <?php echo $contactId; ?></h5>
+            <button type="button" class="close" data-dismiss="modal" style="color:#ffffff;" style="color:#ffffff;" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -103,7 +103,7 @@
                 </div>
                 <input type="hidden" id="contactId" name="contactId" value="<?php echo $contactId; ?>">
                 <input type="hidden" id="userId" name="userId" value="<?php echo $Id; ?>">
-                <button type="submit" class="btn btn-success" name="contactReply">Reply</button>
+                <button type="submit" class="btn btn-success" name="contactReply" style="background-color: #000000;color:#ffffff; border-color:#ffffff;">Reply</button>
             </form>
           </div>
         </div>
@@ -118,15 +118,15 @@
     <div class="modal fade" id="history" tabindex="-1" role="dialog" aria-labelledby="history" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
-            <div class="modal-header" style="background-color: rgb(187 188 189);">
-              <h5 class="modal-title" id="history">Your Sent Message</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header" style="background-color: #000000;color:#ffffff;">
+              <h5 class="modal-title" id="history" style="margin-left:40%;">Your Sent Message</h5>
+              <button type="button" class="close" data-dismiss="modal" style="color:#ffffff;" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body" id="notReply">
             <table class="table-striped table-bordered col-md-12 text-center">
-                <thead style="background-color: rgb(111 202 203);">
+                <thead style="background-color: #000000;color:#ffffff;">
                     <tr>
                         <th>Contact Id</th>
                         <th>Reply Message</th>

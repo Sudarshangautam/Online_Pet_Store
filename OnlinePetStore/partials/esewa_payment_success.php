@@ -33,8 +33,12 @@ if( isset($_REQUEST['oid']) &&
 
 			if ( trim($response_code)  == 'Success')
 			{
-				// $sql = "UPDATE orders SET status=1 WHERE id='".$order['id']."'";
-				// mysqli_query($conn, $sql);
+				$sql = "UPDATE payment SET status=1 WHERE productId='".$order['productId']."'";
+				mysqli_query($conn, $sql);
+
+				$deletesql = "DELETE FROM `viewcart` WHERE `productId`='".$order['productId']."'";   
+                $deleteresult = mysqli_query($conn, $deletesql);
+
                 echo '<script>alert("Thank you for purchasing with us. Your payment has been made successfully.");
 				window.location.href="http://localhost/OnlinePetStore/index.php"; 
 				</script>';
